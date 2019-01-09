@@ -43,7 +43,7 @@ function getAutoCompleteMovies(searchText, callback) {
     let url = `${urlOMDB}s=*${searchText}*`
     axios.get(url)
         .then((response) => {
-            console.log(response)
+            //console.log(response)
             let resultSearch = response.data
 
             if (resultSearch.Response == 'True') {
