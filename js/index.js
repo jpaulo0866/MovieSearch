@@ -78,9 +78,9 @@ function getMovies(searchText, page) {
               <div class="col-md-3">
                 <div class="well text-center">
                   <img src="${movie.Poster}">
-                  <p class=""><span>${movie.Title}<span></h5>
-                  <h5>${movie.Year}</h5>
-                  <a href="movie.html?movieId=${movie.imdbID}" class="btn btn-primary" href="#">Mais Detalhes...</a>
+                  <p>${movie.Title}</p>
+                  <p>${movie.Year}</p>
+                  <a href="movie.html?movieId=${movie.imdbID}" class="btn btn-primary" target="_blank">Mais Detalhes...</a>
                 </div>
               </div>
             `
