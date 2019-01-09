@@ -1,4 +1,4 @@
-function getMovie() {
+const getMovie = () => {
     let movieId = getUrlParameter('movieId')
 
     axios.get(`${urlOMDB}?plot=full&i=${movieId}`)

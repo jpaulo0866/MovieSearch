@@ -39,7 +39,7 @@ $("#searchText").autocomplete({
 });
 
 
-function getAutoCompleteMovies(searchText, callback) {
+const getAutoCompleteMovies = (searchText, callback) => {
     let url = `${urlOMDB}s=*${searchText}*`
     axios.get(url)
         .then((response) => {
@@ -47,7 +47,7 @@ function getAutoCompleteMovies(searchText, callback) {
             let resultSearch = response.data
 
             if (resultSearch.Response == 'True') {
-                let mapped = resultSearch.Search.map(function (e) {
+                let mapped = resultSearch.Search.map((e) => {
                     return e.Title
                 })
                 callback(mapped)
@@ -61,7 +61,7 @@ function getAutoCompleteMovies(searchText, callback) {
         })
 }
 
-function getMovies(searchText, page) {
+const getMovies = (searchText, page) => {
     let url = `${urlOMDB}s=${searchText}${(page != undefined ? '&page=' + page : '')}`
     hideErrorDiv()
     hideMoviesDiv()
@@ -102,7 +102,7 @@ function getMovies(searchText, page) {
                         visiblePages: 5,
                         next: 'Next',
                         prev: 'Prev',
-                        onPageClick: function (event, page) {
+                        onPageClick: (event, page) => {
                             let searchText = $('#searchText').val()
                             getMovies(searchText, page)
                         }
