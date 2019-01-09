@@ -1,7 +1,7 @@
 function getMovie() {
     let movieId = getUrlParameter('movieId')
 
-    axios.get(urlOMDB + '?plot=full&i=' + movieId)
+    axios.get(`${urlOMDB}?plot=full&i=${movieId}`)
         .then((response) => {
             console.log(response)
             let movie = response.data
@@ -31,7 +31,7 @@ function getMovie() {
               ${movie.Plot}
               <hr>
               <a href="http://imdb.com/title/${movie.imdbID}" target="_blank" class="btn btn-primary">Acessar IMDB</a>
-              <a href="javascript:history.back()" class="btn btn-default">Voltar para a Pesquisa</a>
+              <a href="index.html" class="btn btn-default">Voltar para a Pesquisa</a>
             </div>
           </div>
         `
