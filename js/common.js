@@ -1,3 +1,5 @@
+const urlOMDB = 'http://www.omdbapi.com?apikey=fb0ae205&'
+
 var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = window.location.search.substring(1),
         sURLVariables = sPageURL.split('&'),
